@@ -1,0 +1,19 @@
+<div class="dashboard-container" >
+    <div class="nav-bar" >
+    <h2>BookRoom</h2>
+    <div class="admin-profile"> 
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <span>Admin 01</span> 
+     </div> 
+    <div class="menu" >
+        <div class="list" routerLink="rooms" ><ion-icon name="home"></ion-icon>Rooms</div>
+        <div class="list" routerLink="users" ><ion-icon name="people"></ion-icon>Users</div>
+        <div class="list" routerLink="bookings" ><ion-icon name="file-tray-full"></ion-icon>Bookings</div> 
+        <div class="list" routerLink="users" ><ion-icon name="call"></ion-icon>Contact </div>
+        <div class="list" routerLink="users" ><ion-icon name="information-circle"></ion-icon>Help</div>
+    </div>
+    </div>
+    <div class="content">
+        <router-outlet  ></router-outlet>
+    </div>
+</div>

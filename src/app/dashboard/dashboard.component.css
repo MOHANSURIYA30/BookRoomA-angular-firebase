@@ -1,0 +1,67 @@
+.dashboard-container
+{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.nav-bar
+{
+  width:16%;
+  /* background-color: aqua;   */
+}
+
+.list
+{
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+    width: 100%;
+    color: #1479FF;
+}
+.list:hover
+{
+    color: white;
+    /* background-color: black; */
+    background-color: #1479FF;
+    cursor: pointer;
+}
+.menu
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.menu ion-icon
+{
+    font-size: 20px;
+    margin-right: 15px;
+    margin-left: 35px;
+}
+h2
+{
+    text-align: center;
+    padding: 15px 0px 20px 0px;
+}
+.content
+{
+  width: 84%;  
+  /* background-color: rgb(190, 190, 190); */
+  background-color: hsl(214, 78%, 91%);
+}
+
+.admin-profile
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    color: rgb(51, 51, 51);
+}
+
+.admin-profile ion-icon
+{
+   font-size: 200%;
+   margin-right: 10px; 
+   
+}

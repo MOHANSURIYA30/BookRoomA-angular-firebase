@@ -1,0 +1,63 @@
+<div class="room-container" >
+    <div *ngIf="showUpdate" class="overlay" >
+     <div class="overlay-content" >
+        <h2>Edit User Details</h2>
+     
+           <div style="margin-top: 10px;display:flex ;flex-direction: column;" >
+            <label style="margin-right:10px ;" for="">User name</label>
+            <input type="text" [formControl]="name">
+           </div> 
+    
+    
+           <div style="margin-top: 10px;display:flex ;flex-direction: column;" >
+            <label style="margin-right:10px ;" for="">E-mail</label>
+            <input type="text" [formControl]="email">
+           </div>  
+
+         <div style="margin-top: 10px;display:flex ;flex-direction: column;" >
+            <label style="margin-right:10px ;" for="">Email Verified</label>
+            <select [formControl]="verified" >
+              <option value="true">True</option>
+              <option value="false">False</option>
+            </select>
+           </div> 
+           
+           <div class="button-container" >
+            <button class="add" (click)="onUpdate()" >Update</button>
+            <button (click)="closeUpdate()" class="cancel">Cancel</button> 
+           </div>
+     </div>
+    </div>
+ <div class="room-content" >
+   <div class="head-content" >
+    <h1>Users Lists</h1>
+   </div> 
+   <div class="all-rooms" >
+     <div class="single-room" *ngFor="let user of users" >
+        <ion-icon style="font-size: 500%;" name="person-circle-outline"></ion-icon>
+        <b style="margin-bottom: 10px;" >{{user.displayName}}</b>
+          <div style="display: flex;flex-direction: column;">
+            <!-- <div style="display: flex;flex-direction:column;align-items:center;" > 
+               <span style="font-weight:600 ;" >Phone</span> 
+               <span  >91 4578457845</span>
+            </div> -->
+            <div style="display: flex;flex-direction:column;align-items:center;" > 
+                <span style="font-weight:600 ;" >Email</span> 
+                <span  >{{user.email}}</span>
+             </div>
+
+             <div style="display: flex;flex-direction:column;align-items:center;" > 
+               <span style="font-weight:600 ;" >Email Verified</span> 
+               <span  >{{user.emailVerified}}</span>
+            </div> 
+             
+          </div> 
+
+          <div  style="display: flex;justify-content:space-around;width:100%" >
+            <button (click)="onEdit(user.id)" style=" background-color:  #1479FF;"  >Edit</button>
+            <button style=" background-color:red;" >Delete</button>
+         </div>
+     </div>
+   </div>
+ </div>
+</div>

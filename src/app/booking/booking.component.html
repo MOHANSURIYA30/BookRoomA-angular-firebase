@@ -1,0 +1,81 @@
+<div class="booking-container" >
+    <div *ngIf="showUpdate" class="overlay" >
+        <div class="overlay-content" >
+           <h2>Edit Booking Details</h2>
+        
+       
+              <div style="margin-top: 10px;display:flex ;flex-direction: column;" >
+               <label style="margin-right:10px ;" for="">Status</label>
+               <select [formControl]="status">
+                <option value="confirmed">confirmed</option>
+                <option value="pending">pending</option>
+               </select>
+              </div>  
+              
+              <div class="button-container" >
+               <button class="add" (click)=" onUpdate()" >Update</button>
+               <button  class="cancel" (click)="closeUpdate()" >Cancel</button> 
+              </div>
+        </div>
+       </div>
+ <div class="content" >
+    <div class="top-content" >
+        <div>
+            <label for="">From</label>
+            <input [formControl]="fromDate" type="date" name="" id="">
+        </div>
+
+        <div>
+            <label for="">To</label>
+            <input [formControl]="toDate" type="date" name="" id="">
+        </div>
+
+        <div>
+            <label for="">Status</label>
+            <select [formControl]="bookStatus" name="" id="">
+                <option value="all">All</option>
+                <option value="pending">Pending</option>
+                <option value="confirmed">Confirmed</option>                                                                             
+            </select>
+        </div>
+
+        <div>
+            <label for="">User Email</label>
+            <input [formControl]="name" type="text" name="" id="">
+        </div>
+            <button class="search" (click)="filterBooking()" >Search</button>
+    </div>
+    <div class="stats"> 
+        <span>Total</span>
+        <div style="background-color:  rgb(204, 192, 83);" >Pending {{pendingCount}}</div>
+        <div style="background-color: green;" >Confirmed {{confirmedCount}}</div>
+    </div>
+    <div *ngIf="bookingDetails.length !== 0" class="booking-list">
+        <div class="single-room" *ngFor="let room of bookingDetails" >
+            <b style="margin-bottom: 10px;" >ROOM {{room.room_no}}</b>
+            <img  style="margin-bottom: 10px;" src="../../assets/download.jpg" alt="">
+              <div >
+                <div style="display: flex;flex-direction:column;" > 
+                   <span style="font-weight:600 ;" >User Email</span> 
+                   <span style="font-size:90%;" >{{room.user_email}}</span>
+                </div>
+                <div style="display: flex;flex-direction:column;" > 
+                    <span style="font-weight:600 ;" >Date</span> 
+                    <span style="font-size:90%;" >{{room.fromDate | date: 'dd-MM-yyyy' }} to {{room.toDate | date: 'dd-MM-yyyy' }}</span>
+                 </div> 
+                 <div style="display: flex;flex-direction:column;" > 
+                    <span style="font-weight:600 ;" >Status</span> 
+                    <span style="font-size:90%;" >{{room.status}}</span>
+                 </div> 
+
+                 
+              </div> 
+    
+              <div  style="display: flex;justify-content:center;width:100%" >
+                <button style=" background-color:  #1479FF;padding: 5px 80px;"  (click)="onEdit(room.customIdName)" >Edit</button>
+             </div>
+         </div>  
+         
+    </div>
+ </div>
+</div>

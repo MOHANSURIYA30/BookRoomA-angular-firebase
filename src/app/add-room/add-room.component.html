@@ -1,0 +1,39 @@
+<div class="add-room-container">
+  
+  <div class="content" >
+    <form [formGroup]="addRoomForm" (ngSubmit)="onSubmit()" >
+      <div style="display:flex;align-items:center;width: 100%;justify-content: space-between;">
+        <h1>Add Room</h1> <button type="button" class="add" (click)="goBack()" >Rooms</button>
+      </div>
+    <div style="margin-top: 10px;display:flex ;flex-direction: column;" >
+        <label style="margin-right:10px ;">Room Type</label>
+         <select formControlName="roomType" >
+            <option value="single ac room">Single Ac Room</option>
+            <option value="single non ac room">Single Non Ac Room</option>
+            <option value="double ac room">Double Ac Room</option>
+            <option value="double non ac room">Double Non Ac Room</option>
+         </select>
+       </div>
+
+       <div style="margin-top: 10px;display:flex ;flex-direction: column;" >
+        <label style="margin-right:10px ;">Room No</label>
+        <input  formControlName="roomNo" type="text" name="" id="">
+       </div> 
+
+       <div style="margin-top: 10px;display:flex ;flex-direction: column;" >
+        <label style="margin-right:10px ;" for="">Mrp</label>
+        <input type="text" formControlName="mrp">
+       </div> 
+
+       <div style="margin-top: 10px;display:flex ;flex-direction: column;" >
+        <label style="margin-right:10px ;" for="">Price</label>
+        <input type="text" formControlName="price">
+       </div>  
+       
+       <div class="button-container" >
+        <button class="add" type="submit" >Add</button>
+        <button class="cancel" type="reset" >Cancel</button> 
+       </div>
+      </form>   
+  </div>
+</div>

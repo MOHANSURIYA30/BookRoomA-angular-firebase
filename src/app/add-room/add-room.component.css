@@ -1,0 +1,54 @@
+.add-room-container
+{
+    /* background-color: green; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content
+{
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    width: 35%;
+}
+
+select,input
+{
+    padding:5px 5px;
+    border: 0px solid rgba(109, 109, 109, 0.753);
+    background-color: rgb(224, 221, 221);
+    border-radius: 2px;
+    margin:5px 0px ;
+    
+}
+
+.button-container
+{
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+button
+{
+    padding: 5px 25px;
+    border: 0px solid black;
+    color: white;
+    border-radius: 2.5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.add
+{
+    background-color:#1479FF;
+    margin-right: 15px;
+}
+
+.cancel
+{
+    color: #1479FF;
+    border:1px solid #1479FF;
+   
+}
